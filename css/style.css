@@ -9,13 +9,14 @@ body{
 #card{
     display: flex;
     flex-direction: column;
+    padding-left: 55px;
     background-color: hsl(0, 0%, 100%);
-    width: 700px;
+    width: 645px;
     height: 530px;
     border-radius: 20px;
     border-bottom-right-radius: 190px;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 .inputs{
     display: flex;
