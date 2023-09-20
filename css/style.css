@@ -6,3 +6,15 @@ body{
     height: 100vh;
     background-color: hsl(0, 0%, 94%)
 }
+#card{
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(0, 0%, 100%);
+    width: 700px;
+    height: 530px;
+    border-bottom-right-radius: 136px;
+    border-radius: 20px;
+    border-bottom-right-radius: 190px;
+    justify-content: center;
+    align-items: center;
+}
