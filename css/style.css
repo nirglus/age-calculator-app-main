@@ -19,4 +19,18 @@ body{
 }
 .inputs{
     display: flex;
+    gap: 40px;
+}
+.input-div{
+    display: flex;
+    flex-direction: column;
+}
+.input-div input{
+    width: 115px;
+    height: 60px;
+    border-radius: 8px;
+    border: 1px solid hsl(0, 0%, 86%);
+    font-size: 25px;
+    font-weight: 700;
+    padding-left: 20px;
 }
