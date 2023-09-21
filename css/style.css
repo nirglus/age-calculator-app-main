@@ -44,3 +44,13 @@ label{
     margin-bottom: 8px;
     color: hsl(0, 1%, 44%);
 }
+.arrowDiv{
+    display: flex;
+    background-color: hsl(259, 100%, 65%);
+    height: 55px;
+    width: 55px;
+    padding: 10px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
