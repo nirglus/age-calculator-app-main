@@ -43,6 +43,7 @@ body{
 input:focus{
     outline: none;
     border: 1px solid hsl(259, 100%, 65%);
+    cursor: pointer;
 }
 label{
     text-transform: uppercase;
