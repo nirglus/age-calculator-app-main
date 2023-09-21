@@ -99,12 +99,22 @@ label{
     }
     .inputs{
         gap: 13px;
+        padding-right: unset;
     }
     .input-div input{
-        width: 53px;
-        height: 40px;
+        width: 68px;
+        height: 44px;
         font-size: 14px;
         padding-left: 10px;
+    }
+    .arrowDiv{
+        height: 25px;
+        width: 25px;
+        right: 125px;
+        top: 129px;
+    }
+    .arrowDiv img{
+        width: 22px;
     }
     .outputs h1{
         font-size: 36px;
