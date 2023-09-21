@@ -55,6 +55,9 @@ label{
     border-radius: 50%;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    right: 40px;
+    top: 143px;
 }
 .arrowDiv img{
     width: 40px;
