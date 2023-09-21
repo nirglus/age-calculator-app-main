@@ -40,6 +40,10 @@ body{
     font-weight: 700;
     padding-left: 20px;
 }
+input:focus{
+    outline: none;
+    border: 1px solid hsl(259, 100%, 65%);
+}
 label{
     text-transform: uppercase;
     font-size: 13px;
