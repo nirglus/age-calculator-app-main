@@ -63,6 +63,14 @@ label{
     position: absolute;
     right: 40px;
     top: 143px;
+    transition: background-color 0.4s;
+}
+.arrowDiv:hover{
+    cursor: pointer;
+    background-color: hsl(0, 0%, 8%);
+}
+.arrowDiv:active{
+    transform: scale(0.9);
 }
 .arrowDiv img{
     width: 40px;
