@@ -91,9 +91,11 @@ label{
 }
 @media (max-width:600px){
     #card{
-        width:310px;
-        height: 350px;
+        width: 310px;
+        height: 380px;
         padding-left: 17px;
+        border-bottom-right-radius: 90px;
+        gap: 100px;
     }
     .inputs{
         gap: 13px;
