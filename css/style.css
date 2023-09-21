@@ -89,3 +89,9 @@ label{
     color: hsl(259, 100%, 65%);
     letter-spacing: 12px;
 }
+@media (max-width:600px){
+    #card{
+        width:310px;
+        height: 350px;
+    }
+}
