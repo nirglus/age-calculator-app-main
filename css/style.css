@@ -94,6 +94,15 @@ label{
         width:310px;
         height: 350px;
     }
+    .inputs{
+        gap: 13px;
+    }
+    .input-div input{
+        width: 53px;
+        height: 40px;
+        font-size: 14px;
+        padding-left: 10px;
+    }
     .outputs h1{
         font-size: 36px;
     }
