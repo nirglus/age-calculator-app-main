@@ -62,3 +62,9 @@ label{
 .arrowDiv img{
     width: 40px;
 }
+.outputs h1{
+    font-size: 80px;
+    margin: 0;
+    line-height: 1;
+    font-style: italic;
+}
