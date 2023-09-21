@@ -93,6 +93,7 @@ label{
     #card{
         width:310px;
         height: 350px;
+        padding-left: 17px;
     }
     .inputs{
         gap: 13px;
