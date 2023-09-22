@@ -60,7 +60,7 @@ function validateDay(){
         return false;
     }
     const thirtyDaysMonths = [4, 6, 9, 11];
-    if (thirtyDaysMonths.includes(userMonth && userDay > 30)){
+    if (thirtyDaysMonths.includes(userMonth) && userDay > 30){
         document.getElementById("dayError").innerHTML = `Must be a valid month`;
         document.getElementById("day").style.borderColor = `hsl(0, 100%, 67%)`;
         return false;
