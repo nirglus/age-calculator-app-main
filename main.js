@@ -1,17 +1,3 @@
-arrowBtn.addEventListener("click", () => {
-    const isYearValid = validateYear();
-    const isMonthValid = validateMonth();
-    const isDayValid = validateDay();
-    if (isYearValid && isMonthValid && isDayValid) {
-        calcAge();
-    }
-    else{
-        document.getElementById("yearSpan").innerHTML = `--`;
-        document.getElementById("monthsSpan").innerHTML = `--`;
-        document.getElementById("daysSpan").innerHTML = `--`;
-    }
-});
-
 function calcAge(){
     const birthDate = new Date(`${document.getElementById("year").value}-${document.getElementById("month").value}-${document.getElementById("day").value}`);
     const currentDate = new Date();
@@ -87,3 +73,17 @@ function validateDay(){
     document.getElementById("day").style.borderColor = `hsl(0, 0%, 86%)`;
     return true;
 }
+
+arrowBtn.addEventListener("click", () => {
+    const isYearValid = validateYear();
+    const isMonthValid = validateMonth();
+    const isDayValid = validateDay();
+    if (isYearValid && isMonthValid && isDayValid) {
+        calcAge();
+    }
+    else{
+        document.getElementById("yearSpan").innerHTML = `--`;
+        document.getElementById("monthsSpan").innerHTML = `--`;
+        document.getElementById("daysSpan").innerHTML = `--`;
+    }
+});
