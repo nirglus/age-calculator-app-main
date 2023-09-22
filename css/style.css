@@ -24,7 +24,7 @@ body{
     display: flex;
     gap: 40px;
     border-bottom: 1px solid hsl(0, 0%, 86%);
-    padding-bottom: 40px;
+    padding-bottom: 32px;
     padding-right: 40px;
 }
 .input-div{
