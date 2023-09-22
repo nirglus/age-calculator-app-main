@@ -5,6 +5,11 @@ arrowBtn.addEventListener("click", () => {
     if (isYearValid && isMonthValid && isDayValid) {
         calcAge();
     }
+    else{
+        document.getElementById("yearSpan").innerHTML = `--`;
+        document.getElementById("monthsSpan").innerHTML = `--`;
+        document.getElementById("daysSpan").innerHTML = `--`;
+    }
 });
 
 function calcAge(){
