@@ -1,4 +1,11 @@
-arrowBtn.addEventListener("click", calcAge);
+arrowBtn.addEventListener("click", () => {
+    const isYearValid = validateYear();
+    const isMonthValid = validateMonth();
+    const isDayValid = validateDay();
+    if (isYearValid && isMonthValid && isDayValid) {
+        calcAge();
+    }
+});
 
 function calcAge(){
     let birthDate = new Date(`${document.getElementById("year").value}-${document.getElementById("month").value}-${document.getElementById("day").value}`);
@@ -11,27 +18,32 @@ function calcAge(){
     }
     console.log(birthDate);
     console.log(userMonthAge);
-    clearErrors();
-    document.getElementById("yearSpan").innerHTML = `${userYearAge}`;
-    document.getElementById("monthsSpan").innerHTML = `${userMonthAge}`;
-    document.getElementById("daysSpan").innerHTML = `${userDayAge}`;
+    if(validateDay() && validateMonth() && validateYear()){
+        document.getElementById("yearSpan").innerHTML = `${userYearAge}`;
+        document.getElementById("monthsSpan").innerHTML = `${userMonthAge}`;
+        document.getElementById("daysSpan").innerHTML = `${userDayAge}`;
+    }
 }
 
 function validateYear(){
-    if(+document.getElementById("year").value > new Date().getFullYear()){
+    if(+document.getElementById("year").value > new Date().getFullYear() || +document.getElementById("year").value < 1){
         document.getElementById("yearError").innerHTML = `Must be in the past`;
         document.getElementById("year").style.borderColor = `hsl(0, 100%, 67%)`;
         return false;
     }
+    document.getElementById("yearError").innerHTML = ``;
+    document.getElementById("year").style.borderColor = `hsl(0, 0%, 86%)`;
     return true;
 }
 
 function validateMonth(){
-    if(+document.getElementById("month").value > 11 || +document.getElementById("month").value < 1){
+    if(+document.getElementById("month").value > 12 || +document.getElementById("month").value < 1){
         document.getElementById("monthError").innerHTML = `Must be a valid month`;
         document.getElementById("month").style.borderColor = `hsl(0, 100%, 67%)`;
         return false;
     }
+    document.getElementById("monthError").innerHTML = ``;
+    document.getElementById("month").style.borderColor = `hsl(0, 0%, 86%)`;
     return true;
 }
 function isLeapYear(){
@@ -53,7 +65,7 @@ function validateDay(){
         document.getElementById("day").style.borderColor = `hsl(0, 100%, 67%)`;
         return false;
     }
-    if(userMonth == 1){
+    if(userMonth == 2){
         if(isLeapYear()){
             if(userDay > 29){
                 document.getElementById("dayError").innerHTML = `Must be a valid month`;
@@ -66,13 +78,7 @@ function validateDay(){
             return false;
         }
     }
-    return true;
-}
-function clearErrors(){
-    document.getElementById("yearError").innerHTML = ``;
-    document.getElementById("year").style.borderColor = `hsl(0, 0%, 86%)`;
-    document.getElementById("monthError").innerHTML = ``;
-    document.getElementById("month").style.borderColor = `hsl(0, 0%, 86%)`;
     document.getElementById("dayError").innerHTML = ``;
     document.getElementById("day").style.borderColor = `hsl(0, 0%, 86%)`;
+    return true;
 }
