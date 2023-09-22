@@ -46,7 +46,7 @@ function validateDay(){
     const userDay = +document.getElementById("day").value;
     const userMonth = +document.getElementById("month").value;
     if(userDay > 31 || userDay < 1){
-        document.getElementById("dayError").innerHTML = `Must be a valid month`;
+        document.getElementById("dayError").innerHTML = `Must be a valid day`;
         document.getElementById("day").style.borderColor = `hsl(0, 100%, 67%)`;
         return false;
     }
