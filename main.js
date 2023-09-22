@@ -27,18 +27,44 @@ function validateYear(){
 }
 
 function validateMonth(){
-    if(+document.getElementById("month").value > 12){
+    if(+document.getElementById("month").value > 11 || +document.getElementById("month").value < 1){
         document.getElementById("monthError").innerHTML = `Must be a valid month`;
         document.getElementById("month").style.borderColor = `hsl(0, 100%, 67%)`;
         return false;
     }
     return true;
 }
+function isLeapYear(){
+    const year = +document.getElementById("year").value;
+    return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+}
+
 function validateDay(){
-    if(+document.getElementById("day").value > 31){
+    const userDay = +document.getElementById("day").value;
+    const userMonth = +document.getElementById("month").value;
+    if(userDay > 31 || userDay < 1){
         document.getElementById("dayError").innerHTML = `Must be a valid month`;
         document.getElementById("day").style.borderColor = `hsl(0, 100%, 67%)`;
         return false;
+    }
+    const thirtyDaysMonths = [4, 6, 9, 11];
+    if (thirtyDaysMonths.includes(userMonth && userDay > 30)){
+        document.getElementById("dayError").innerHTML = `Must be a valid month`;
+        document.getElementById("day").style.borderColor = `hsl(0, 100%, 67%)`;
+        return false;
+    }
+    if(userMonth == 1){
+        if(isLeapYear()){
+            if(userDay > 29){
+                document.getElementById("dayError").innerHTML = `Must be a valid month`;
+                document.getElementById("day").style.borderColor = `hsl(0, 100%, 67%)`;
+                return false;
+            }
+        }else if(userDay > 28){
+            document.getElementById("dayError").innerHTML = `Must be a valid month`;
+            document.getElementById("day").style.borderColor = `hsl(0, 100%, 67%)`;
+            return false;
+        }
     }
     return true;
 }
