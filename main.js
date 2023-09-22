@@ -15,3 +15,7 @@ function calcAge(){
     document.getElementById("monthsSpan").innerHTML = `${userMonthAge}`;
     document.getElementById("daysSpan").innerHTML = `${userDayAge}`;
 }
+
+function validateYear(){
+    if(document.getElementById("year").value)
+}

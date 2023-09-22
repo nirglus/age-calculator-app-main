@@ -51,6 +51,14 @@ label{
     margin-bottom: 8px;
     color: hsl(0, 1%, 44%);
 }
+.input-div span{
+    font-size: 12px;
+    font-weight: 400;
+    font-style: italic;
+    margin-left: 5px;
+    color: hsl(0, 100%, 67%);
+    padding-top: 8px;
+}
 .arrowDiv{
     display: flex;
     background-color: hsl(259, 100%, 65%);
@@ -106,6 +114,9 @@ label{
         height: 44px;
         font-size: 14px;
         padding-left: 10px;
+    }
+    .input-div span{
+        font-size: 7px;
     }
     .arrowDiv{
         height: 25px;
