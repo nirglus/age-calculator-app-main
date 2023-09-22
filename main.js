@@ -1,4 +1,6 @@
-arrowBtn.addEventListener("click", calcAge)
+arrowBtn.addEventListener("click", calcAge);
+
+
 
 function calcAge(){
     let birthDate = new Date(`${document.getElementById("year").value}-${document.getElementById("month").value}-${document.getElementById("day").value}`);
@@ -17,5 +19,14 @@ function calcAge(){
 }
 
 function validateYear(){
-    if(document.getElementById("year").value)
+    if(+document.getElementById("year").value > new Date().getFullYear()){
+        document.getElementById("yearError").innerHTML = `Must be in the past`;
+        document.getElementById("year").style.borderColor = `hsl(0, 100%, 67%)`;
+        return false;
+    }
+    else{
+        document.getElementById("yearError").innerHTML = ``;
+        document.getElementById("year").style.borderColor = `hsl(0, 0%, 86%)`;
+        return true;
+    }
 }
