@@ -12,7 +12,7 @@ body{
     padding-left: 55px;
     background-color: hsl(0, 0%, 100%);
     width: 645px;
-    height: 530px;
+    height: 560px;
     border-radius: 20px;
     border-bottom-right-radius: 190px;
     justify-content: center;
@@ -75,7 +75,7 @@ label{
     justify-content: center;
     position: absolute;
     right: 40px;
-    top: 120px;
+    top: 135px;
     transition: background-color 0.4s;
 }
 .arrowDiv:hover{
