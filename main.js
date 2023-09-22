@@ -30,3 +30,16 @@ function validateYear(){
         return true;
     }
 }
+
+function validateMonth(){
+    if(+document.getElementById("month").value > 12){
+        document.getElementById("monthError").innerHTML = `Must be a valid month`;
+        document.getElementById("month").style.borderColor = `hsl(0, 100%, 67%)`;
+        return false;
+    }
+    else{
+        document.getElementById("monthError").innerHTML = ``;
+        document.getElementById("month").style.borderColor = `hsl(0, 0%, 86%)`;
+        return true;
+    }
+}
