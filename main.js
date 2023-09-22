@@ -1,5 +1,7 @@
-arrowBtn.addEventListener("click", () => {
-    let birthDate = new Date(`${year.value}-${month.value}-${day.value}`);
+arrowBtn.addEventListener("click", calcAge)
+
+function calcAge(){
+    let birthDate = new Date(`${document.getElementById("year").value}-${document.getElementById("month").value}-${document.getElementById("day").value}`);
     let currentDate = new Date();
     let userYearAge = currentDate.getFullYear() - birthDate.getFullYear();
     let userMonthAge = (userYearAge * 12 + currentDate.getMonth()) - birthDate.getMonth();
@@ -12,4 +14,4 @@ arrowBtn.addEventListener("click", () => {
     document.getElementById("yearSpan").innerHTML = `${userYearAge}`;
     document.getElementById("monthsSpan").innerHTML = `${userMonthAge}`;
     document.getElementById("daysSpan").innerHTML = `${userDayAge}`;
-})
+}
