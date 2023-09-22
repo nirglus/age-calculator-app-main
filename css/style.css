@@ -75,7 +75,7 @@ label{
     justify-content: center;
     position: absolute;
     right: 40px;
-    top: 143px;
+    top: 120px;
     transition: background-color 0.4s;
 }
 .arrowDiv:hover{
