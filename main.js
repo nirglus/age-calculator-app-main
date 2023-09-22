@@ -2,7 +2,7 @@ arrowBtn.addEventListener("click", () => {
     let birthDate = new Date(`${year.value}-${month.value}-${day.value}`);
     let currentDate = new Date();
     let userYearAge = currentDate.getFullYear() - birthDate.getFullYear();
-    let userMonthAge = (userYearAge * 12 + currentDate.getMonth())- birthDate.getMonth();
+    let userMonthAge = (userYearAge * 12 + currentDate.getMonth()) - birthDate.getMonth();
     if(currentDate.getMonth() < birthDate.getMonth()){
         userYearAge = userYearAge - 1;
     }

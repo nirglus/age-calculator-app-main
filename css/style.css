@@ -82,7 +82,7 @@ label{
 .outputs h1{
     font-size: 80px;
     margin: 0;
-    line-height: 1;
+    line-height: 1.2;
     font-style: italic;
 }
 .outputs span{
