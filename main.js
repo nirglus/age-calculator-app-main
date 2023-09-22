@@ -73,7 +73,6 @@ function validateDay(){
     document.getElementById("day").style.borderColor = `hsl(0, 0%, 86%)`;
     return true;
 }
-
 arrowBtn.addEventListener("click", () => {
     const isYearValid = validateYear();
     const isMonthValid = validateMonth();
