@@ -4,11 +4,11 @@ function calcAge(){
     let userYearAge = currentDate.getFullYear() - birthDate.getFullYear();
     let userMonthAge = (userYearAge * 12 + currentDate.getMonth()) - birthDate.getMonth();
     let userDayAge = Math.floor((currentDate - birthDate) / (24 * 60 * 60 * 1000));
-    if(currentDate.getMonth() < birthDate.getMonth()){
+    if(currentDate.getMonth() <= birthDate.getMonth()){
         userYearAge--;
     }
-    console.log(birthDate);
-    console.log(userMonthAge);
+    // console.log(birthDate);
+    // console.log(userMonthAge);
     if(validateDay() && validateMonth() && validateYear()){
         document.getElementById("yearSpan").innerHTML = `${userYearAge}`;
         document.getElementById("monthsSpan").innerHTML = `${userMonthAge}`;
@@ -38,20 +38,22 @@ function validateMonth(){
     return true;
 }
 function isLeapYear(){
-    const year = document.getElementById("year").value;
+    const year = +document.getElementById("year").value;
     return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
 }
 
 function validateDay(){
-    const userDay = document.getElementById("day").value;
-    const userMonth = document.getElementById("month").value;
+    const userDay = +document.getElementById("day").value;
+    const userMonth = +document.getElementById("month").value;
+    console.log(userMonth);
     if(userDay > 31 || userDay < 1){
         document.getElementById("dayError").innerHTML = `Must be a valid day`;
         document.getElementById("day").style.borderColor = `hsl(0, 100%, 67%)`;
         return false;
     }
     const thirtyDaysMonths = [4, 6, 9, 11];
-    if (thirtyDaysMonths.includes(userMonth) && userDay > 30){
+    if (thirtyDaysMonths.includes(userMonth) && userDay > 29){
+        console.log(`This is day ${thirtyDaysMonths.includes(userMonth)}`);
         document.getElementById("dayError").innerHTML = `Must be a valid day`;
         document.getElementById("day").style.borderColor = `hsl(0, 100%, 67%)`;
         return false;
