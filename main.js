@@ -17,7 +17,7 @@ function calcAge(){
 }
 
 function validateYear(){
-    if(+document.getElementById("year").value > new Date().getFullYear() || +document.getElementById("year").value < 1){
+    if(document.getElementById("year").value > new Date().getFullYear() || document.getElementById("year").value < 1){
         document.getElementById("yearError").innerHTML = `Must be in the past`;
         document.getElementById("year").style.borderColor = `hsl(0, 100%, 67%)`;
         return false;
@@ -28,7 +28,7 @@ function validateYear(){
 }
 
 function validateMonth(){
-    if(+document.getElementById("month").value > 12 || +document.getElementById("month").value < 1){
+    if(document.getElementById("month").value > 12 || document.getElementById("month").value < 1){
         document.getElementById("monthError").innerHTML = `Must be a valid month`;
         document.getElementById("month").style.borderColor = `hsl(0, 100%, 67%)`;
         return false;
@@ -38,13 +38,13 @@ function validateMonth(){
     return true;
 }
 function isLeapYear(){
-    const year = +document.getElementById("year").value;
+    const year = document.getElementById("year").value;
     return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
 }
 
 function validateDay(){
-    const userDay = +document.getElementById("day").value;
-    const userMonth = +document.getElementById("month").value;
+    const userDay = document.getElementById("day").value;
+    const userMonth = document.getElementById("month").value;
     if(userDay > 31 || userDay < 1){
         document.getElementById("dayError").innerHTML = `Must be a valid day`;
         document.getElementById("day").style.borderColor = `hsl(0, 100%, 67%)`;
