@@ -73,7 +73,8 @@ function validateDay(){
     document.getElementById("day").style.borderColor = `hsl(0, 0%, 86%)`;
     return true;
 }
-arrowBtn.addEventListener("click", () => {
+
+function validateAndCalc(){
     const isYearValid = validateYear();
     const isMonthValid = validateMonth();
     const isDayValid = validateDay();
@@ -85,4 +86,5 @@ arrowBtn.addEventListener("click", () => {
         document.getElementById("monthsSpan").innerHTML = `--`;
         document.getElementById("daysSpan").innerHTML = `--`;
     }
-});
+}
+arrowBtn.addEventListener("click", validateAndCalc);
