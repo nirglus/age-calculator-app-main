@@ -88,3 +88,8 @@ function validateAndCalc(){
     }
 }
 arrowBtn.addEventListener("click", validateAndCalc);
+document.addEventListener("keydown", (event) =>{
+    if(event.key == "Enter"){
+        validateAndCalc();
+    }
+})
