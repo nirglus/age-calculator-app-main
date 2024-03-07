@@ -2,10 +2,21 @@ function calcAge(){
     const birthDate = new Date(`${document.getElementById("year").value}-${document.getElementById("month").value}-${document.getElementById("day").value}`);
     const currentDate = new Date();
     let userYearAge = currentDate.getFullYear() - birthDate.getFullYear();
-    let userMonthAge = (userYearAge * 12 + currentDate.getMonth()) - birthDate.getMonth();
+    console.log({userYearAge});
+    let userMonthAge = (currentDate.getMonth() + 1) - (birthDate.getMonth() + 1);
+    if (currentDate.getDate() < birthDate.getDate()) {
+        userMonthAge--;
+    }
+    if (userMonthAge < 0) {
+        userMonthAge += 12;
+    }
     let userDayAge = Math.floor((currentDate - birthDate) / (24 * 60 * 60 * 1000));
     if(currentDate.getMonth() <= birthDate.getMonth()){
         userYearAge--;
+    }
+
+    if (userYearAge <= 0) {
+        userYearAge = 0;
     }
     // console.log(birthDate);
     // console.log(userMonthAge);
@@ -76,11 +87,30 @@ function validateDay(){
     return true;
 }
 
+function validateCurrentDate(){
+    const userDay = +document.getElementById("day").value;
+    const userMonth = +document.getElementById("month").value - 1;
+    const userYear = +document.getElementById("year").value;
+    const userDate = new Date(userYear, userMonth, userDay);
+    const currentDate = new Date();
+    if(userDate > currentDate){
+        document.getElementById("dayError").innerHTML = `Must be a valid day`;
+        document.getElementById("day").style.borderColor = `hsl(0, 100%, 67%)`;
+        document.getElementById("monthError").innerHTML = `Must be a valid month`;
+        document.getElementById("month").style.borderColor = `hsl(0, 100%, 67%)`;
+        document.getElementById("yearError").innerHTML = `Must be in the past`;
+        document.getElementById("year").style.borderColor = `hsl(0, 100%, 67%)`;
+        return false;
+    }
+    return true;
+}
+
 function validateAndCalc(){
     const isYearValid = validateYear();
     const isMonthValid = validateMonth();
     const isDayValid = validateDay();
-    if (isYearValid && isMonthValid && isDayValid) {
+    const isDateValid = validateCurrentDate();
+    if (isYearValid && isMonthValid && isDayValid && isDateValid) {
         calcAge();
     }
     else{
